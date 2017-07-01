@@ -1,0 +1,18 @@
+{% extends 'code/base.html' %}
+
+{% block title %} Detail {% endblock %}
+
+{% block content %}
+
+<h1>Code Snippets</h1>
+
+  <hr>
+
+
+<pre>
+  {{codesnippet.snippet}}
+</pre>
+<br>
+<p>Created at {{codesnippet.create}}. Last updated at {{codesnippet.modified}}
+
+{% endblock %}

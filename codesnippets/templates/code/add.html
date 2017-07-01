@@ -1,0 +1,34 @@
+{% extends 'code/base.html' %}
+
+{% block title %} Add {% endblock %}
+
+{% block content %}
+
+  {% if header %}
+  
+    <h1>{{ header }}</h1>
+
+  {% elif error %}
+
+    <h1>{{ error }}</h1>
+
+  {% endif %}
+
+    <hr>
+
+    <form method="post" action="{% url 'codesnippets:add' %}">
+
+      {% csrf_token %}
+      {% for field in form %}
+      <div class = "form-group">
+        {{field.error}}
+        {{field.label_tag}}{{field}}
+      </div>
+      {% endfor %}
+      
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+{% endblock %}
