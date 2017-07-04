@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath codesnippetmanager codesnippetmanager.wsgi
+web: gunicorn codesnippetmanager.wsgi
